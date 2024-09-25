@@ -1,0 +1,32 @@
+1. when we split data as: 
+
+	X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
+
+	where, X = spotify_data[features]
+		y = spotify_data['genre']
+
+x_train contains 80% features and y_train contains genre for training the model.
+x_test contains 20% features and y_test contains genre fro testing the model.
+
+My question is why do we need y_test data? I only wanted to predict the genre of music by training the model with train data.
+And predicting the data against x_test data.
+
+ANSWER
+
+The purpose of having y_test data is to evaluate the performance of your model. Here's why it is important:
+
+    Model Training: You train your model using X_train (features) and y_train (labels or targets). 
+    The model learns patterns and relationships between the features and the target (in this case, the genre).
+
+    Model Prediction: After training, you want to check how well your model can generalize to new, unseen data. 
+    You do this by making predictions on X_test, which are the features the model hasn't seen during training.
+
+    Evaluation with y_test: Once your model makes predictions for X_test, you need to compare these predictions
+    with the actual target values (y_test). This comparison tells you how accurate your model's predictions are.
+    Common metrics include accuracy, precision, recall, F1-score, etc. Without y_test, you wouldn't know how well 
+    your model performs, as you wouldn't have any actual results to compare to.
+
+In essence, y_test serves as a reference to determine how good the model is at predicting genres.
+Without it, you can't objectively measure the model's success.
+
+ 
